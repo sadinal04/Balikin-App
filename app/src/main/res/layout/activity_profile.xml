@@ -1,27 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#1D1616"
     android:padding="16dp">
 
-    <!-- Nama Pengguna -->
-    <TextView
-        android:id="@+id/nameTextView"
+    <!-- ScrollView untuk konten profile -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_nav"
+        android:layout_alignParentTop="true">
 
-    <!-- Email Pengguna -->
-    <TextView
-        android:id="@+id/emailTextView"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/logo_balikin"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/logobalikin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Balik.in"
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginStart="8dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Profile Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#333333"
+                android:padding="16dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginHorizontal="8dp"
+                android:clipToPadding="false">
+
+                <!-- Nama Pengguna -->
+                <TextView
+                    android:id="@+id/nameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Pengguna"
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Email Pengguna -->
+                <TextView
+                    android:id="@+id/emailTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email Pengguna"
+                    android:textSize="16sp"
+                    android:textColor="#B0B0B0" />
+            </LinearLayout>
+
+            <!-- Tambahan jika mau -->
+            <!-- <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Konten tambahan di sini"
+                android:textColor="#FFFFFF" /> -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
-        android:textSize="18sp"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold" />
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:background="#333333"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>

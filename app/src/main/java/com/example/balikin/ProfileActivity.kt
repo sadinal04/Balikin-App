@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.balikin.api.RetrofitClient
 import com.example.balikin.model.User
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,6 +19,9 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+
+        val bottomNav: BottomNavigationView = findViewById(R.id.bottom_nav)
+        setupBottomNavigation(this, bottomNav)
 
         // Mengakses TextView untuk menampilkan profil
         nameTextView = findViewById(R.id.nameTextView)

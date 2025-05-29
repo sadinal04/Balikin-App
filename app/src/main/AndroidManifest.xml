@@ -27,6 +27,8 @@
         <activity android:name=".DashboardActivity"/>
         <activity android:name=".ProfileActivity"/>
         <activity android:name=".LostItemDetailActivity"/>
+        <activity android:name=".BarangDitemukanActivity"/>
+        <activity android:name=".ReportActivity"/>
     </application>
 
 </manifest>

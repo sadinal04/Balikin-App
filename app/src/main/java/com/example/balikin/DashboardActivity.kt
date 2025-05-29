@@ -35,24 +35,9 @@ class DashboardActivity : AppCompatActivity() {
         // Panggil API untuk mendapatkan data barang hilang
         getLostItems()
 
-        // Menangani pemilihan item pada BottomNavigationView
-        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_nav)
-        bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.nav_home -> {
-                    // Tindakan untuk navigasi ke halaman Home
-                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.nav_profile -> {
-                    // Buka halaman profil saat item "Profile" dipilih
-                    val intent = Intent(this, ProfileActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                else -> false
-            }
-        }
+        val bottomNav: BottomNavigationView = findViewById(R.id.bottom_nav)
+        setupBottomNavigation(this, bottomNav)
+
     }
 
     private fun getLostItems() {
