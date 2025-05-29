@@ -62,8 +62,8 @@ class LoginActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
 
-                            // Pindah ke MainActivity setelah login sukses
-                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            // Pindah ke DashboardActivity setelah login sukses
+                            val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
                             startActivity(intent)
                             finish() // Menutup LoginActivity agar tidak bisa kembali dengan tombol back
                         } else {
@@ -105,4 +105,3 @@ class LoginActivity : AppCompatActivity() {
         editor.apply()
     }
 }
-

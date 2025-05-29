@@ -1,7 +1,7 @@
 package com.example.balikin.model
 
 data class RegisterRequest(
-    val name: String,
     val email: String,
-    val password: String
+    val password: String,
+    val name: String
 )
