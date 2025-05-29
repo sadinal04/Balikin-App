@@ -1,6 +1,7 @@
 package com.example.balikin.api
 
 import com.example.balikin.model.LoginRequest
+import com.example.balikin.model.LostItem
 import com.example.balikin.model.RegisterRequest
 import com.example.balikin.model.ResponseLogin
 import com.example.balikin.model.ResponseRegister
@@ -11,6 +12,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ApiService {
 
@@ -25,6 +27,16 @@ interface ApiService {
     // Endpoint untuk mengambil profil pengguna
     @GET("api/auth/profile")
     fun getProfile(@Header("Authorization") token: String): Call<User>  // Menambahkan @Header pada token
+
+    // Endpoint untuk mendapatkan daftar barang hilang
+    @GET("api/lost-items")
+    fun getLostItems(@Header("Authorization") token: String): Call<List<LostItem>>  // Mengambil daftar barang hilang
+
+    @GET("lost-items/{id}")
+    fun getLostItemDetail(
+        @Header("Authorization") token: String,
+        @Path("id") itemId: String
+    ): Call<LostItem>
 
     // Endpoint untuk mengambil posts (gunakan GET)
     @GET("api/posts")  // Sesuaikan dengan endpoint backend kamu

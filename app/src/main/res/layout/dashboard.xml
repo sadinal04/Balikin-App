@@ -51,6 +51,7 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="8dp" />
 
+            <!-- Horizontal Scroll (Item Contoh) -->
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -143,6 +144,12 @@
                 android:text="(List item di sini)"
                 android:textColor="#FFFFFF" />
 
+            <!-- RecyclerView untuk Item -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lost_items_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
         </LinearLayout>
     </ScrollView>
 
