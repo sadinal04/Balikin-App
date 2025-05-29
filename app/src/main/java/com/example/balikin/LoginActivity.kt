@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.login)
 
         // Menggunakan findViewById untuk mengakses view
         email = findViewById(R.id.email)

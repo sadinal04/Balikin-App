@@ -10,7 +10,7 @@ class DashboardActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
+        setContentView(R.layout.dashboard)
 
         // Menangani pemilihan item pada BottomNavigationView
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_nav)
